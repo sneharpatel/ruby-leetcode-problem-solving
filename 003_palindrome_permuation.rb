@@ -18,8 +18,9 @@ def isPalindrome(s)
 end
 
 
- s1 = "carerac"
-p isPalindrome(s1)
+s1 = "carerac"
+s2 = "code"
+p isPalindrome(s2)
 
 
 
@@ -59,6 +60,8 @@ def isPalindromePermuation(s)
   end
 
   return odds <= 1
+
+
 
 end
 

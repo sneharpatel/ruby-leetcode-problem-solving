@@ -24,22 +24,18 @@ end
 #   end
 # end
 
-  def hasCycle(list)
+  def hasCycle(head)
 
-    slow = list.next_node
-    p slow
-    fast = list.next_node
-    p fast
+    slow = head
+    fast = head
 
     if slow == nil || fast == nil
       return false
     end
 
-    while(slow != nil && fast != nil)
+    while(slow != nil && fast != nil && fast.next_node != nil)
       slow = slow.next_node
-      # p slow
       fast = fast.next_node.next_node
-      # p fast
       if slow == fast && fast != nil
         p "found loop"
         return true
@@ -57,7 +53,7 @@ node3 = LinkedListNode.new(12, node2)
 node4 = LinkedListNode.new(45, node3)
 node5 = LinkedListNode.new(21, node4)
 
-# node1.next_node = node2
+node1.next_node = node2
 p hasCycle(node5)
 # node1.next_node = node5 # creates an infinite loop
 # p hasCycle(node5)

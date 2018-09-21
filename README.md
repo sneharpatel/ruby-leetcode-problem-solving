@@ -1,1 +1,1 @@
-Leetcode solution in Ruby
+Problem solution in Ruby

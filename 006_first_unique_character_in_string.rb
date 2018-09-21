@@ -20,7 +20,7 @@ def first_unique_char(s)
       hash[char] = 1
     end
 
-    p hash
+    # p hash
   }
 
   s.each_char.with_index(0) {|char, i|
@@ -38,5 +38,6 @@ end
 s1 = "leetcode"
 s2 = "loveleetcode"
 s3 = "ssee"
+s4 = "test"
 
-p first_unique_char(s3)
+p first_unique_char(s4)

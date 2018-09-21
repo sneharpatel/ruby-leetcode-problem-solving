@@ -10,7 +10,14 @@
 #     Note that an empty string is also considered valid.
 
 
-# Solution-1 : initalize stack as an array
+# property: last unclosed, first closed
+# Solution-1 : initialize stack as an array
+#
+# 1. scan each char from left to right
+# 2. if opening symbol, push it into stack
+# 3. if closing symbol and top of stack opening of same type , pop it from stack
+# 4. should end with empty stack
+#
 
 def valid_parentheses(s)
 
@@ -20,7 +27,7 @@ def valid_parentheses(s)
   s.each_char do |char|
 
     if (char == '(' || char == '{' || char == '[')
-      stack << char
+      stack.push(char)
     elsif (char == ')' && !stack.empty? && stack.last == '(')
       stack.pop
     elsif (char == ']' && !stack.empty? && stack.last == '[')
@@ -38,39 +45,10 @@ def valid_parentheses(s)
 end
 
 
-
-# solution:2 by initalizing stack object from stack class
-require_relative 'stack'
-
-def valid_parentheses1(s)
-
-  stack = Stack.new
-
-  s.each_char do |char|
-
-    if (char == '(' || char == '{' || char == '[')
-      stack.push(char)
-    elsif (char == ')' && !stack.empty? && stack.peek == '(')
-      stack.pop
-    elsif (char == ']' && !stack.empty? && stack.peek == '[')
-      stack.pop
-    elsif (char == '}' && !stack.empty? && stack.peek == '{')
-      stack.pop
-   else
-     return false
-    end
-  end
-
- return stack.empty?
-
-end
-
-
 s1 = "[(])"
 
 s2 = "[({})]"
 
 s3 = ')]}'
 
-p valid_parentheses(s3)
-p valid_parentheses1(s3)
+p valid_parentheses(s2)

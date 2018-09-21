@@ -1,4 +1,4 @@
-# Implementing queue using stack
+# Implementing queue using stack:   https://www.youtube.com/watch?v=AN0axYeLue0
 #
 # Implement the following operations of a queue using stacks.
 #
@@ -7,8 +7,11 @@
 #     peek() -- Get the front element.
 #     empty() -- Return whether the queue is empty.
 #     Notes:
-#     You must use only standard operations of a stack -- which means only push to top, peek/pop from top, size, and is empty operations are valid.
-#     Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.
+#     You must use only standard operations of a stack -- which means only push to top, peek/pop from top, size,
+#     and is empty operations are valid.
+#     Depending on your language, stack may not be supported natively.
+#     You may simulate a stack by using a list or deque (double-ended queue),
+#     as long as you use only standard operations of a stack.
 #     You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
 
 
@@ -20,11 +23,11 @@ class MyQueue
     @stack2 = []
   end
 
-  def push(x)
+  def push(x)   # enqueue
     @stack1.push(x)
   end
 
-  def pop
+  def pop       # dequeue
     if @stack2.empty?
       while (!@stack1.empty?) do
         @stack2.push(@stack1.pop)
@@ -34,7 +37,7 @@ class MyQueue
     return @stack2.pop()
   end
 
-  def peek
+  def peek     # front
     if @stack2.empty?
       while (!@stack1.empty?) do
         @stack2.push(@stack1.pop)
@@ -59,6 +62,7 @@ myQue = MyQueue.new
 
 p myQue.push('a')
 p myQue.push('b')
+p myQue.push('c')
 p myQue.qSize
 
 p myQue.pop()
@@ -66,3 +70,4 @@ p myQue.pop()
 p myQue.peek
 
 p myQue.qEmpty
+p myQue.qSize

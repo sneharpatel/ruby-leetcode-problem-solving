@@ -1,4 +1,6 @@
-# You are given two arrays (without duplicates) nums1 and nums2 where nums1’s elements are subset of nums2. Find all the next greater numbers for nums1's elements in the corresponding places of nums2.
+# https://www.youtube.com/watch?v=9pakXMkzF5w
+# You are given two arrays (without duplicates) nums1 and nums2 where nums1’s elements are subset of nums2.
+# Find all the next greater numbers for nums1's elements in the corresponding places of nums2.
 #
 # The Next Greater Number of a number x in nums1 is the first greater number to its right in nums2. If it does not exist, output -1 for this number.
 #
@@ -30,14 +32,14 @@ def next_greater_element_I(num1, num2)
 
 
   stack = []
-  hash = Hash.new(0)
+  hash = Hash.new
   result = []
 
-  # for num2 check whether stack is empty or not, if empty it pushes num into stack and if not empty it will go to while loop and pop out stack and push into hash
+  # for num2 check whether stack is empty or not, if empty it pushes num into stack and
+  # if not empty it will go to while loop and pop out stack and push into hash
 
   num2.each_with_index { |num, inx |
     while (!stack.empty?) && (stack.last < num)
-      # stack.pop()
       hash[stack.pop()] = num
     end
     stack.push(num)
@@ -47,7 +49,7 @@ def next_greater_element_I(num1, num2)
 
   num1.each_with_index { |n, i|
   if hash.include? n
-    result.push hash[n]
+    result.push(hash[n])
   else
     result.push -1
   end
@@ -61,9 +63,12 @@ end
 
 # num1 = [4,1,2]
 # num2 = [1,3,4,2]
+#
+# [-1,3,-1]
 
 num1 = [9,2,2,6]
 num2 = [9,6,4,1,2,3,7,5]
 
 p next_greater_element_I(num1,num2)
 
+# [-1,3,3,7]

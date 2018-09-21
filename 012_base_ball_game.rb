@@ -58,20 +58,14 @@ def base_ball_game_score(arr)
       new = val + stack.last
       stack.push(val)
       stack.push(new)
-      #  p stack.last
-      #  p (stack.last - 1)
-      #  stack.push(stack.last + stack.last-1)
-
     elsif arr[i] == 'C'
       stack.pop
 
     elsif arr[i] == 'D'
       stack.push(2*stack.last)
-
     else
       stack.push(arr[i].to_i)
     end
-
 
   end
 

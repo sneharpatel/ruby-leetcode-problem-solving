@@ -32,17 +32,13 @@ class MinStack
     if @stack2.empty?
       @stack2.push(x)
     else
-      if x < @stack2.last
-        @stack2.push(x)
-      end
+      @stack2.push(x < @stack2.last ? x : @stack2.last)
     end
   end
 
   def pop
-    if top == @stack2.last
-      @stack1.pop
-      @stack2.pop
-    end
+    @stack1.pop()
+    @stack2.pop()
   end
 
   def top

@@ -20,17 +20,17 @@ def contain_duplicates(arr)
     else
       hash[i] = 1
     end
-
-    if hash[i] > 1
-       return true
-    end
+      if hash[i] > 1
+        return true
+      end
   end
 
   return false
-
 end
 
-array = [1, 2, 2, 3]
+array = [1, 2, 3, 4, 7, 4, 2]
+
+array = [1,4,3]
 
 p contain_duplicates(array)
 
