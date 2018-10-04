@@ -23,7 +23,7 @@ def factorial1(n)
 
 end
 
-p factorial1(5)
+p factorial1(1)
 
 
 # A prime number is a whole number greater than 1 whose only factors are 1 and itself

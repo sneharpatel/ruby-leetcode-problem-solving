@@ -12,10 +12,8 @@ def permutation_array(ar, i=0)
 
   (i..n-1).each do |j|
     swap(ar,i,j)
-    #p ar[i], ar[j]
     permutation_array(ar, i+1)
     swap(ar,i,j)
-    #p ar[i], ar[j]
   end
 end
 
