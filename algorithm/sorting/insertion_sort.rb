@@ -1,4 +1,4 @@
-#Insertion sort builds a sorted array one ele at a time by comparing each new ele to the already sorted ele
+# Insertion sort builds a sorted array one ele at a time by comparing each new ele to the already sorted ele
 # and inserting the new ele into the correct location - sort a hand of playing cards
 #
 # stable and in-place algo

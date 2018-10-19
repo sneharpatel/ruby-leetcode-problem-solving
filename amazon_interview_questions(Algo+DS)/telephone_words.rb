@@ -1,3 +1,6 @@
+#time complexity = 3^n , n = no. of input digits for eg. 23 n = 2 => 3^2 = 9
+
+
 def telephone_words(digits)
   n = digits.length
   h = get_key_value

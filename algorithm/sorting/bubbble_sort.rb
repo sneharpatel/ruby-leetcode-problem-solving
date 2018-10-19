@@ -1,4 +1,4 @@
-def sort_numbers(arr)
+def bubble_sort(arr)
   n = arr.length-1
   (0..n).each do |i|
     (i+1..n).each do |j|
@@ -18,4 +18,4 @@ def swap(arr, i, j)
 end
 arr = [16,5,8,9,7,6,1]
 p arr
-p sort_numbers(arr)
+p bubble_sort(arr)

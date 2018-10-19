@@ -7,6 +7,9 @@
 # requires first (n-1) comparisons, then (n-2), (n-3) and so on.
 # So efficiency will be n(n-1)/2 => O(n2) - in worst, avg,and best case
 #
+# https://www.youtube.com/watch?v=GUDLRan2DWM
+#
+# in place of logic of selecting the minimum in each pass and putting it as it's appropriate position is selection sort algorithm
 
 def selection_sort(arr)
 

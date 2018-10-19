@@ -1,11 +1,14 @@
+# Time complexity (running time in worst, avg and best case) = O(nlogn)
+# space complexity = O(n) - not in place algorithm
+# divide and conquer algorithm
+
+
 def merge_sort(ar)
   n = ar.length
 
   mid = n/2
-  left_ar = ar[0...mid]  # not include mid (range will 0 to mid-1)
-  p left_ar
+  left_ar = ar[0..mid-1]
   right_ar = ar[mid..n-1]
-  p right_ar
 
   if ar == nil
     return nil
@@ -14,9 +17,9 @@ def merge_sort(ar)
     return ar
   end
 
-  merge_sort(left_ar)
-  merge_sort(right_ar)
-  merge_ar(left_ar,right_ar,ar)
+  merge_sort(left_ar) # sort left sub list
+  merge_sort(right_ar) # sort right sub list
+  merge_ar(left_ar,right_ar,ar) # merge left and right sub-list
 
 end
 
